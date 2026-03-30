@@ -1,17 +1,22 @@
-import React from 'react';
+import React, { use } from 'react';
 import Cart from './Cart';
 
-const Body = () => {
+const Body = ({toolPromise, clickCarts, setClickCarts}) => {
+    const tools = use (toolPromise);
+    //console.log(tools);
     return (
         <div className='container mx-auto '>
-            <div className='m-20 space-y-4'>
-                <h1 className='text-5xl font-bold text-center'>Premium Digital Tools</h1>
-                <p className='text-center text-[#627382]' >Choose from our curated collection of premium digital <br /> products designedto boost your
-                     productivity and creativity.</p>
-            </div>
+            
 
             {/* cart */}
-            <Cart></Cart>
+           <div className='grid sm:grid-cols-3 grid-cols-1  my-20 '>
+             {
+                tools.map (tool  => <Cart  tool= {tool}  clickCarts= {clickCarts} 
+       setClickCarts = {setClickCarts}></Cart>)
+             }
+           </div>
+
+            
         </div>
     );
 };

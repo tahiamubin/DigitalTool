@@ -1,4 +1,5 @@
 
+import { Suspense, useState } from 'react'
 import './App.css'
 import Banner from './components/Banner'
 import Body from './components/Body'
@@ -7,16 +8,45 @@ import Footer from './components/Footer'
 import GetStarted from './components/GetStarted'
 import NavBar from './components/NavBar'
 import WorkFlow from './components/WorkFlow'
+import Cart from './components/Cart'
+import ClickCarts from './components/ClickCarts'
 
 
-const 
+
 function App() {
+  const getTool = async () => {
+    const res = await fetch("/data.json");
+    return res.json()
+  }
+  const toolPromise = getTool();
+  const [activeTab, setActiveTab] = useState('product')
+  const [clickCarts, setClickCarts] = useState([]);
   return (
     <>
      <NavBar></NavBar>
      <Banner></Banner>
      <Count></Count>
-     <Body></Body>
+     <div className='m-20 space-y-4'>
+                <h1 className='text-5xl font-bold text-center'>Premium Digital Tools</h1>
+                <p className='text-center text-[#627382]' >Choose from our curated collection of premium digital <br /> products designedto boost your
+                     productivity and creativity.</p>
+            </div>
+     {/* name of each tab group should be unique */}
+<div 
+ className="tabs tabs-box justify-center">
+  <input onClick={() => setActiveTab('product')}
+   type="radio" name="my_tabs_1" className="tab" aria-label="Products" defaultChecked />
+  <input  onClick={() => setActiveTab('carts')}
+  type="radio" name="my_tabs_1" className="tab" aria-label={`Carts`} defaultChecked />
+  
+</div>
+    <Suspense>
+       {activeTab === 'product' && <Body toolPromise={toolPromise} clickCarts= {clickCarts} 
+       setClickCarts = {setClickCarts} ></Body>}
+       {activeTab === 'carts' && <ClickCarts clickCarts= {clickCarts} 
+       setClickCarts = {setClickCarts} ></ClickCarts>}
+    </Suspense>
+    
      <GetStarted></GetStarted>
      <WorkFlow></WorkFlow>
      <Footer></Footer>
