@@ -49,7 +49,8 @@ const GetStarted = () => {
          
          {/* 2nd cart */}
          <div>
-            <div className="card w-96 bg-base-100 shadow-sm bg-gradient-to-r from-[#4F39F6] to-[#9514FA] text-white">
+            <div className="card w-96 bg-base-100 shadow-sm 
+            bg-gradient-to-r from-[#4F39F6] to-[#9514FA] text-white">
   <div className="card-body">
     <span className="bg-amber-200 px-1.5 py-1 rounded-3xl
     w-40 text-[#BB4D00]">Most Popular</span>

@@ -23,7 +23,7 @@ function App() {
   const [clickCarts, setClickCarts] = useState([]);
   return (
     <>
-     <NavBar></NavBar>
+     <NavBar clickCarts={clickCarts}></NavBar>
      <Banner></Banner>
      <Count></Count>
      <div className='m-20 space-y-4'>
@@ -33,11 +33,15 @@ function App() {
             </div>
      {/* name of each tab group should be unique */}
 <div 
- className="tabs tabs-box justify-center">
+ className="tabs  justify-center gap-10">
   <input onClick={() => setActiveTab('product')}
-   type="radio" name="my_tabs_1" className="tab" aria-label="Products" defaultChecked />
+
+   type="radio" name="my_tabs_1" className="tab text-2xl rounded-4xl
+   btn btn-outline btn-primary " aria-label="Products" defaultChecked />
+
   <input  onClick={() => setActiveTab('carts')}
-  type="radio" name="my_tabs_1" className="tab" aria-label={`Carts`} defaultChecked />
+  type="radio" name="my_tabs_1" className="tab text-2xl rounded-4xl  btn btn-outline btn-primary
+  " aria-label={`Carts (${clickCarts.length})` } />
   
 </div>
     <Suspense>

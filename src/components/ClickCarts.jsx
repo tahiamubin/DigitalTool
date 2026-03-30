@@ -1,11 +1,20 @@
 import React from 'react';
 
-const ClickCarts = ({clickCarts}) => {
+const ClickCarts = ({clickCarts,setClickCarts}) => {
+    const totalPrice = clickCarts.reduce ((sum,item) => sum + item.price, 0)
+    const handleDeleteBtn = (item) => {
+         const filterArray = clickCarts.filter(c => c.id !== item.id)   
+         setClickCarts(filterArray);     
+    }
     return (
         <div className='container mx-auto m-20'>
             <div>
                 {
+                    (clickCarts.length === 0 && <p className='text-2xl text-center'>Cart is empty</p>)
+                }
+                {
                 clickCarts.map(item =>  
+            
                     <div key = {item.id}>
                         <div className='justify-between flex p-4 bg-gray-50 mb-5'>
                         <div className='flex'>
@@ -21,7 +30,8 @@ const ClickCarts = ({clickCarts}) => {
                                 
                                 <img src="" alt="" />
                                 <div>
-                                    <button className="btn btn-soft btn-error">Remove</button>
+                                    <button onClick={() => {handleDeleteBtn(item)}}
+                                    className="btn btn-soft btn-error ">Remove</button>
                                 </div>
                             </div>
                         </div>
@@ -33,7 +43,7 @@ const ClickCarts = ({clickCarts}) => {
             </div>
             <div className='text-2xl font-bold flex justify-between'>
                  <h1>Total</h1>
-                 <p>$00</p>
+                 <p>{totalPrice}$</p>
             </div>
         </div>
     );

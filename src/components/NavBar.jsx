@@ -2,7 +2,7 @@ import React from 'react';
 import digitalTool from "../assets/DigiTools.png"
 import shopping from "../assets/shopping.png"
 
-const NavBar = () => {
+const NavBar = ({clickCarts}) => {
     return (
         <div className='container mx-auto'>
             <div className="navbar bg-base-100 shadow-sm">
@@ -31,8 +31,9 @@ const NavBar = () => {
 
     </ul>
   </div>
-  <div className="navbar-end gap-2 flex">
-    <img src={shopping} alt="" />
+  <div className="navbar-end gap-2 flex relative ">
+    <p className=' absolute right-[30%] -top-[20%] btn rounded-full bg-[#4F39F6] text-white'>{clickCarts.length}</p>
+    <img className='h-[20px] w-[20px]  ' src={shopping} alt="" />
     <h1>Login</h1>
     <a className="btn rounded-3xl text-white bg-gradient-to-r from-[#4F39F6] to-[#9514FA]">Get started</a>
   </div>
