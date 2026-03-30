@@ -3,7 +3,7 @@ import banner from '../assets/banner.png'
 
 const Banner = () => {
     return (
-        <div className='container mx-auto flex justify-between m-30'>
+        <div className='container mx-auto justify-end m-30 grid sm:grid-cols-2 grid-cols-1 '>
             <div>
                 <div className='space-y-5'>
                 <h1 className='text-[#4F39F6] bg-[#E1E7FF] p-2 w-75 rounded-4xl mt-6'>New: AI-Powered Tools Available</h1>
