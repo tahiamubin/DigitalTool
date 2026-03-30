@@ -5,11 +5,12 @@ import Banner from './components/Banner'
 import Body from './components/Body'
 import Count from './components/Count'
 import Footer from './components/Footer'
-import GetStarted from './components/GetStarted'
 import NavBar from './components/NavBar'
 import WorkFlow from './components/WorkFlow'
 import Cart from './components/Cart'
 import ClickCarts from './components/ClickCarts'
+import Pricing from './components/Pricing'
+import GetStarted from './components/GetStarted'
 
 
 
@@ -50,8 +51,10 @@ function App() {
        {activeTab === 'carts' && <ClickCarts clickCarts= {clickCarts} 
        setClickCarts = {setClickCarts} ></ClickCarts>}
     </Suspense>
+
+    <GetStarted></GetStarted>
     
-     <GetStarted></GetStarted>
+     <Pricing></Pricing>
      <WorkFlow></WorkFlow>
      <Footer></Footer>
     </>
