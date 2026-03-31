@@ -1,16 +1,24 @@
 import React from 'react';
+import { toast } from 'react-toastify';
 
 const ClickCarts = ({clickCarts,setClickCarts}) => {
     const totalPrice = clickCarts.reduce ((sum,item) => sum + item.price, 0)
+       const handlePayBtn = () => {
+        setClickCarts([]);
+        toast.error("Deleted from cart");
+    }
     const handleDeleteBtn = (item) => {
          const filterArray = clickCarts.filter(c => c.id !== item.id)   
-         setClickCarts(filterArray);     
+         setClickCarts(filterArray);  
+         toast.error("Deleted from cart");   
     }
+ 
     return (
         <div className='container mx-auto m-20'>
             <div>
                 {
-                    (clickCarts.length === 0 && <p className='text-2xl text-center'>Cart is empty</p>)
+                    (clickCarts.length === 0 &&
+                         <p className='text-2xl text-center p-50'>Cart is empty</p> )
                 }
                 {
                 clickCarts.map(item =>  
@@ -44,6 +52,10 @@ const ClickCarts = ({clickCarts,setClickCarts}) => {
             <div className='text-2xl font-bold flex justify-between'>
                  <h1>Total</h1>
                  <p>{totalPrice}$</p>
+            </div>
+            <div onClick={handlePayBtn} >
+                 <h1 className='bg-gradient-to-r from-[#4F39F6] to-[#9514FA] font-bold 
+                 text-white mt-2 text-4xl text-center p-3 rounded-4xl'>Proceed to Checkout</h1>
             </div>
         </div>
     );

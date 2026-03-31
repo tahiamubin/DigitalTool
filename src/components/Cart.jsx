@@ -1,11 +1,13 @@
 import React, { useState } from 'react';
 import Features from './Features';
+import { toast } from 'react-toastify';
 
 const Cart = ({tool,clickCarts, setClickCarts}) => {
   const [Buy, setBuy] = useState(false)
      const handleBuyButton = () => {
           setClickCarts([...clickCarts , tool]); 
-          setBuy(true)
+          toast.success("Added to cart");
+          setBuy(true);
           
      } 
    
@@ -13,7 +15,7 @@ const Cart = ({tool,clickCarts, setClickCarts}) => {
         <div>
             <div className="card w-96 bg-base-100 shadow-sm">
   <div className="card-body">
-    <span className="badge badge-xs badge-warning">{tool.tag}</span>
+    <span className="badge p-2  badge-warning bg-[#efecff]">{tool.tag}</span>
     <p >
         {tool.icon}
     </p>
@@ -28,9 +30,10 @@ const Cart = ({tool,clickCarts, setClickCarts}) => {
      } 
     </ul>
     <div className="mt-6">
-      <button onClick={handleBuyButton}
-       className="btn w-full rounded-3xl text-white bg-gradient-to-r from-[#4F39F6] to-[#9514FA]">
-        {Buy === false ? "Buy Now" : "Added to Cart"}</button>
+      <button onClick={handleBuyButton}>
+        {Buy === false ? <p className=' btn w-full bg-gradient-to-r from-[#4F39F6] to-[#9514FA]
+         rounded-3xl text-white'>Buy Now</p> : 
+        <p className='bg-green-500 btn w-full rounded-3xl text-white'>Added to cart</p>}</button>
     </div>
   </div>
 </div>
