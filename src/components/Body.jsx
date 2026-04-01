@@ -9,7 +9,7 @@ const Body = ({toolPromise, clickCarts, setClickCarts}) => {
             
 
             {/* cart */}
-           <div className='grid md:grid-cols-2 sm:grid-cols-3 grid-cols-1  my-20 '>
+           <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3  my-20 '>
              {
                 tools.map (tool  => <Cart  tool= {tool}  clickCarts= {clickCarts} 
        setClickCarts = {setClickCarts}></Cart>)

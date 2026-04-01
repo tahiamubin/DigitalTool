@@ -12,7 +12,7 @@ const GetStarted = () => {
             <p className='text-[#627382]'>Start using premium digital tools in minutes, not hours.</p>
           </div>
 
-           <div  className='container mx-auto grid grid-cols-1 md:grid-cols-3 space-y-4 
+           <div  className='container mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 space-y-4 
             sm:grid-cols-3 justify-center m-30'>
              <div className="card bg-base-100 w-96 shadow-sm">
                 <p className=' absolute right-[10%] -top-[2%] 
