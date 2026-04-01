@@ -10,7 +10,7 @@ const Pricing = () => {
             </div>
 
         
-    <div className='grid grid-cols-1 md:grid-cols-1 items-center sm:grid-cols-3 py-6'>
+    <div className='grid grid-cols-1  items-center md:grid-cols-3 py-6'>
 
         <div>
             <div className="card w-96 bg-base-100 shadow-sm
