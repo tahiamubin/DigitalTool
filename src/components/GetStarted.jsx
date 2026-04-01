@@ -12,10 +12,10 @@ const GetStarted = () => {
             <p className='text-[#627382]'>Start using premium digital tools in minutes, not hours.</p>
           </div>
 
-           <div  className='container mx-auto grid grid-cols-1 space-y-4
+           <div  className='container mx-auto grid grid-cols-1 md:grid-cols-3 space-y-4 
             sm:grid-cols-3 justify-center m-30'>
              <div className="card bg-base-100 w-96 shadow-sm">
-                <p className=' absolute right-[30%] -top-[20%]
+                <p className=' absolute right-[10%] -top-[2%] 
      btn rounded-full bg-[#4F39F6] text-white'>1</p>
   <figure className="px-10 pt-10">
     <img
@@ -30,7 +30,7 @@ const GetStarted = () => {
             </div>
             </div>
             <div className="card bg-base-100 w-96 shadow-sm">
-                <p className=' absolute right-[30%] -top-[20%]
+                <p className=' absolute right-[10%] -top-[2%] 
      btn rounded-full bg-[#4F39F6] text-white'>2</p>
   <figure className="px-10 pt-10">
     <img
@@ -45,7 +45,7 @@ const GetStarted = () => {
   </div>
             </div>
             <div className="card bg-base-100 w-96 shadow-sm">
-                <p className=' absolute right-[30%] -top-[20%]
+                <p className=' absolute right-[10%] -top-[2%] 
      btn rounded-full bg-[#4F39F6] text-white'>3</p>
   <figure className="px-10 pt-10">
     <img
