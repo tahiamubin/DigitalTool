@@ -19,6 +19,7 @@ const Cart = ({tool,clickCarts, setClickCarts}) => {
     <p >
         {tool.icon}
     </p>
+    
     <div className="justify-between space-y-2 ">
       <h2 className="text-3xl font-bold">{tool.name}</h2>
       <p className='text-[#627382]'>{tool.description}</p>

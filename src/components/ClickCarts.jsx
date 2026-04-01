@@ -5,7 +5,7 @@ const ClickCarts = ({clickCarts,setClickCarts}) => {
     const totalPrice = clickCarts.reduce ((sum,item) => sum + item.price, 0)
        const handlePayBtn = () => {
         setClickCarts([]);
-        toast.error("Deleted from cart");
+        toast.success("Proceed to check-out");
     }
     const handleDeleteBtn = (item) => {
          const filterArray = clickCarts.filter(c => c.id !== item.id)   
@@ -26,8 +26,9 @@ const ClickCarts = ({clickCarts,setClickCarts}) => {
                     <div key = {item.id}>
                         <div className='justify-between flex p-4 bg-gray-50 mb-5'>
                         <div className='flex'>
-                           
+                            
                             <div>
+                                <p>{item.icon}</p>
                                 <h1 className='text-xl font-bold py-5'>{item.name}</h1>
                            <h1 className='font-bold'>${item.price}</h1>
                             </div>
