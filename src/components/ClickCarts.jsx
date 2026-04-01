@@ -1,6 +1,7 @@
 import React from 'react';
 import { toast } from 'react-toastify';
 
+
 const ClickCarts = ({clickCarts,setClickCarts}) => {
     const totalPrice = clickCarts.reduce ((sum,item) => sum + item.price, 0)
        const handlePayBtn = () => {
@@ -50,14 +51,19 @@ const ClickCarts = ({clickCarts,setClickCarts}) => {
                 )
                }
             </div>
-            <div className='text-2xl font-bold flex justify-between'>
+            {
+                clickCarts.length > 0 && <div className='text-2xl font-bold flex justify-between'>
                  <h1>Total</h1>
                  <p>{totalPrice}$</p>
             </div>
-            <div onClick={handlePayBtn} >
+            }
+             {
+               clickCarts.length >0 &&  <div onClick={handlePayBtn} >
                  <h1 className='bg-gradient-to-r from-[#4F39F6] to-[#9514FA] font-bold 
                  text-white mt-2 text-4xl text-center p-3 rounded-4xl'>Proceed to Checkout</h1>
             </div>
+             }
+            
         </div>
     );
 };
